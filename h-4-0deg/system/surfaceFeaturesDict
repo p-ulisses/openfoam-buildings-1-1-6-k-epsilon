@@ -1,0 +1,57 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  8                                      |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  8                                      |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeaturesDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaces
+(
+    "body.stl"
+    "neighborhood.stl"
+);
+
+extractionMethod    extractFromSurface;
+
+includedAngle       150;
+
+writeObj            yes;
+
+// Optional: refinementBox
+// Example of how to add a refinement box around the stl geometry (if needed)
+// refinementRegions
+// (
+//     body
+//     {
+//         mode inside;
+//         levels ((0 4));
+//     }
+// );
+
+// Optional: surfaceFeatureExtractDicts
+// To include multiple stl files, you can add them here
+// surfaceFeatureExtractDicts
+// (
+//     "body"
+// );
+
+// ************************************************************************* //
